@@ -1,0 +1,47 @@
+<section data-bs-version="5.1" class="header1 cid-sPimentel01" id="header01-1p">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6">
+        <h1 class="mbr-section-title mbr-fonts-style align-center mb-3 display-2">
+          <strong>Atendimento para Curitiba e Região</strong>
+        </h1>
+        <p class="mbr-text mbr-fonts-style align-center display-7">
+          Desentupimento de pias, ralos, vasos, esgoto, caixa de gordura, fossas e muito mais. Visita gratuita!
+        </p>
+        <div class="mbr-section-btn align-center">
+          <a class="btn btn-success display-4" href="https://api.whatsapp.com/send?phone=5541984218808&text=Seu problema resolvido rápido!">
+            FALE AGORA PELO WHATSAPP
+          </a>
+          <a class="btn btn-warning display-4" href="#">
+            ORÇAMENTO GRÁTIS
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <picture>
+          <!-- Mobile -->
+          <source media="(max-width: 768px)" srcset="assets/images/banner-mobile.jpg" type="image/jpeg">
+          <!-- Desktop -->
+          <img src="assets/images/banner-desktop.jpg" alt="Banner Pimentel Serviços" style="width: 100%; border-radius: 1rem;">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #header01-1p {
+    background-color: #ffffff;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  #header01-1p h1 {
+    color: #004aad;
+  }
+  #header01-1p p {
+    color: #000000;
+  }
+  #header01-1p .btn-success {
+    margin-right: 1rem;
+  }
+</style>
