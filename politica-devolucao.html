@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Garantia e Reembolso - Desentupidora Florianópolis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+            transition: width 0.3s ease;
+        }
+
+        .section:hover h2::after {
+            width: 100px;
+        }
+
+        .section h3 {
+            color: #555;
+            font-size: 1.4rem;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .section ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .section li::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -25px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #667eea30;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,126,234,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover::before {
+            transform: scale(1);
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102,126,234,0.2);
+            border-color: #667eea;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37,211,102,0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+        }
+
+        .references {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .references h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .references ol {
+            padding-left: 20px;
+        }
+
+        .references li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .references a {
+            color: #667eea;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Política de Garantia e Reembolso</h1>
+            <p>Desentupidora Florianópolis - Transparência e Confiança</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Introdução</h2>
+                <p>Na Desentupidora Florianópolis, nosso compromisso é com a excelência na prestação de serviços de desentupimento e limpeza. Entendemos que a satisfação do cliente é fundamental, e por isso, oferecemos uma política clara de garantia e reembolso para assegurar a confiança em nossos trabalhos. Esta política detalha as condições sob as quais os serviços prestados são garantidos e como eventuais solicitações de reembolso ou reexecução de serviço podem ser processadas.</p>
+            </div>
+
+            <div class="section">
+                <h2>Garantia dos Serviços</h2>
+                <p>Todos os serviços de desentupimento e limpeza realizados pela Desentupidora Florianópolis possuem garantia contra o reaparecimento do problema original no mesmo local e causado pela mesma razão, dentro de um período especificado. A duração da garantia pode variar dependendo da natureza e complexidade do serviço executado, sendo sempre informada e documentada no momento da contratação e na nota fiscal ou ordem de serviço.</p>
+                
+                <div class="highlight-box">
+                    <strong>Prazo de Garantia:</strong> Geralmente, o prazo mínimo de garantia para serviços de desentupimento é de 30 dias, podendo ser estendido em casos específicos.
+                </div>
+
+                <h3>Condições da Garantia:</h3>
+                <ul>
+                    <li><strong>Problema Recorrente:</strong> A garantia é aplicável se o entupimento ou problema original reincidir no mesmo local e for comprovadamente decorrente da falha na execução do serviço inicial ou de um problema não solucionado por completo.</li>
+                    <li><strong>Integridade do Local:</strong> A garantia será invalidada caso haja intervenção de terceiros no local do serviço, modificações na estrutura hidráulica ou se o problema for causado por descarte inadequado de materiais após a conclusão do serviço.</li>
+                    <li><strong>Comprovação:</strong> Para acionar a garantia, o cliente deve apresentar a nota fiscal ou ordem de serviço que comprove a realização do serviço pela Desentupidora Florianópolis.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Política de Reembolso e Reexecução de Serviço</h2>
+                <p>Entendemos que, em raras ocasiões, pode haver a necessidade de um reembolso ou de uma nova intervenção. Nossa política visa a resolução justa e eficiente de qualquer insatisfação.</p>
+
+                <h3>Direito de Arrependimento:</h3>
+                <div class="highlight-box">
+                    Conforme o Código de Defesa do Consumidor (CDC), o cliente tem o direito de arrependimento em até <strong>7 dias corridos</strong> a contar da data da contratação do serviço, caso a contratação tenha ocorrido fora do estabelecimento comercial (online, por telefone, etc.).
+                </div>
+
+                <h3>Condições para Reembolso ou Reexecução:</h3>
+                <ul>
+                    <li><strong>Falha na Prestação do Serviço:</strong> Se for constatado que o serviço não foi executado conforme o acordado, o cliente poderá solicitar a reexecução do serviço sem custo adicional ou, em casos específicos, o reembolso proporcional ou total.</li>
+                    <li><strong>Desistência Antes da Execução:</strong> Caso o cliente desista do serviço antes de sua execução, o reembolso será processado, podendo haver retenção de valores referentes a custos operacionais já incorridos.</li>
+                    <li><strong>Prazo para Reclamação:</strong> Qualquer insatisfação deve ser comunicada em até 24 horas após a conclusão do serviço.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Processo de Solicitação</h2>
+                <p>Para solicitar a aplicação da garantia, reexecução de serviço ou reembolso, siga os passos abaixo:</p>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Contato</h4>
+                        <p>Entre em contato através dos nossos canais de atendimento (telefone, WhatsApp, e-mail).</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Informações</h4>
+                        <p>Forneça o número da nota fiscal, data do serviço e descrição detalhada do problema.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Análise</h4>
+                        <p>Nossa equipe técnica realizará uma análise, podendo ser necessária uma nova visita ao local.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Resolução</h4>
+                        <p>Após a análise, será apresentada a solução mais adequada para o seu caso.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Prazos para Reembolso</h2>
+                <p>Em caso de aprovação de reembolso, o valor será processado de acordo com a forma de pagamento original. O prazo para efetivação do reembolso pode variar conforme a instituição financeira e o método de pagamento, sendo geralmente de até <strong>10 dias úteis</strong> após a aprovação.</p>
+            </div>
+
+            <div class="section">
+                <h2>Considerações Finais</h2>
+                <p>A Desentupidora Florianópolis se empenha para resolver todas as questões de forma amigável e eficiente, sempre buscando a melhor solução para o cliente. Esta política está em conformidade com as leis vigentes e visa proteger os direitos de nossos consumidores, ao mesmo tempo em que estabelece diretrizes claras para a prestação de nossos serviços.</p>
+                <p>Para quaisquer dúvidas ou informações adicionais, entre em contato conosco.</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Entre em Contato</h3>
+            <p><strong>Telefone:</strong> (48) 99198-2664</p>
+            <p><strong>Atendimento:</strong> 24 horas por dia, 7 dias por semana</p>
+            <p><strong>Região:</strong> Florianópolis e Grande Florianópolis</p>
+            <a href="https://wa.me/5548991982664" class="whatsapp-btn" target="_blank">
+                📱 Falar no WhatsApp
+            </a>
+        </div>
+
+        <div class="references">
+            <h3>Referências</h3>
+            <ol>
+                <li>Aquarella Desentupidora. <em>Desentupidoras e direitos do consumidor - Entenda</em>. Disponível em: <a href="https://aquarelladesentupidora.com.br/desentupidoras-e-direitos-do-consumidor-entenda/" target="_blank">https://aquarelladesentupidora.com.br/desentupidoras-e-direitos-do-consumidor-entenda/</a></li>
+                <li>Squarespace. <em>Como redigir uma política de devolução (dicas e exemplos)</em>. Disponível em: <a href="https://pt.squarespace.com/blog/exemplo-de-politica-de-devolucao-para-pequenas-empresas" target="_blank">https://pt.squarespace.com/blog/exemplo-de-politica-de-devolucao-para-pequenas-empresas</a></li>
+                <li>Desentupir 24h. <em>Garantia Desentupir 24h</em>. Disponível em: <a href="https://desentupir24h.com.br/garantia-desentupir-24h/" target="_blank">https://desentupir24h.com.br/garantia-desentupir-24h/</a></li>
+                <li>Serasa Experian. <em>Direito do Consumidor: entenda os principais e como funciona na ...</em>. Disponível em: <a href="https://www.serasaexperian.com.br/blog-pme/direito-do-consumidor-devolucao-pratica/" target="_blank">https://www.serasaexperian.com.br/blog-pme/direito-do-consumidor-devolucao-pratica/</a></li>
+                <li>Desentupidora Hidro Curitiba. <em>Quanto tempo dura a garantia após um serviço de Hidrojateamento?</em>. Disponível em: <a href="https://desentupidorahidrocuritiba.com.br/glossario/quanto-tempo-dura-a-garantia-apos-um-servico-de-hidrojateamento/" target="_blank">https://desentupidorahidrocuritiba.com.br/glossario/quanto-tempo-dura-a-garantia-apos-um-servico-de-hidrojateamento/</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Back to top functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section, .content, .contact-info').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
